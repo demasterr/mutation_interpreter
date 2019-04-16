@@ -24,3 +24,21 @@ To only show the violations for which mutants have survived, the `SURVIVING_ONLY
 variable can be set to `True`. To focus on only one rule, the `FOCUS_RULE` variable
 can be used. To disable any focus, set the variable to any arbitrary negative
 number.
+
+## Setup `decision.py`
+Decision.py is used to generate a decision tree which enables for new
+anti-pattern rule generation. The decision tree is based on the output
+provided by the mutation observer.
+Similar to the main.py script from above, the output of the JHawk and
+mutation observer is assumed to
+be located in the `JHawkStarter/Output` folder. The output CSV from the
+mutation observer is again assumed to be `[project_name]_all_results.csv`.
+
+To analyze different projects, one can alter the `PROJECTS` variable at the
+top of the file. The list contains all projects to be considered for the
+generation of the decision tree.
+
+## Refactors.md
+In refactors.md all refactors found with the above scripts are listed. Each of
+these refactors are based on one of the rules provided in main.py. Please note
+that we do not hold any premise on the quality of each refactor.
